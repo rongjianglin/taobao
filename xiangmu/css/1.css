@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.margin{width: 1200px;margin:0 auto}
+.header{height:50px;display: flex}
+.header p{margin:0 20px;font: 12px/50px "";color:red ;}
+.banner {
+    width: 1200px;
+    height: 535px;
+    margin:10px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+ul.carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 7200px;
+    height:535px;
+}
+
+.clearFix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+li {
+    float: left;
+    width: 1200px;
+    height: 535px;
+    list-style: none;
+   
+ 
+}
+
+li:nth-child(1),
+li:nth-child(6) {
+    background:url(../img/t1.jpg) no-repeat;
+    background-size: cover
+}
+
+li:nth-child(2) {
+    background:url(../img/t2.jpg) no-repeat;
+    background-size: cover
+}
+
+li:nth-child(3) {
+    background:url(../img/t3.jpg) no-repeat;
+    background-size: cover
+}
+
+li:nth-child(4) {
+    background:url(../img/t4.jpg) no-repeat;
+    background-size: cover
+}
+
+li:nth-child(5) {
+    background:url(../img/t5.jpg) no-repeat;
+    background-size: cover
+}
+
+.btns {
+    width: 1200px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    /* background-color: white; */
+}
+
+.btns div {
+    height: 100px;
+    line-height: 50px;
+    width: 30px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.leftBtn {
+    float: left;
+}
+
+.rightBtn {
+    float: right;
+}
+
+.cirs {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cirs li {
+    width: 20px;
+    height: 20px;
+    background: none;
+    background-color: gold;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.cirs li.active {
+    background-color: skyblue;
+}
+.kind{
+    height: 50px;
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
