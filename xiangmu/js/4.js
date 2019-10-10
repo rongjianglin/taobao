@@ -5,9 +5,9 @@ var transfer = null;
 if (id) {
     AJAX.get("../php/4.php", { id: id }, function (data) {
         console.log(data.data)
-         transfer = data.data
+        transfer = data.data
         if (!data.error) {
-            
+
             media.innerHTML = "";
             media.innerHTML = `
     <div class="media-left">
@@ -63,7 +63,7 @@ if (id) {
                 //元素距页面距离
                 var left2 = big.parentNode.offsetLeft
                 var top2 = big.parentNode.offsetTop
-                
+
                 big.onmousemove = function (e) {
                     //鼠标移动后鼠标位置
                     var left3 = e.pageX
@@ -112,11 +112,12 @@ if (id) {
         }
 
     })
-    
+    //用事件委托来实现不同功能
     media.onclick = function (e) {
         var e = e || window.event;
         console.log(e.target)
         console.log(transfer)
+        //点击加入购物车
         if (e.target.name === "add") {
 
             var global = getCookie("global")
@@ -124,43 +125,58 @@ if (id) {
                 var local = JSON.parse(localStorage.getItem("local")) || [];
                 console.log(local)
                 console.log(local[0])
-           
-                if(local.length){
+
+                if (local.length) {
                     console.log(local.length)
-                 
+
                     console.log(transfer[0])
                     console.log(local[0])
-                   var p =  local.find(function(item){
-                       return item[0]  == transfer[0]
-                   })
-                   console.log(p)
-                   if(p){
-                      
-                      p[16]++
-                   }
-                   else{
+                    var p = local.find(function (item) {
+                        return item[0] == transfer[0]
+                    })
+                    console.log(p)
+                    if (p) {
+
+                        p[16]++
+                    }
+                    else {
                         transfer[16] = 1
                         local.push(transfer)
-                   }
-                   localStorage.setItem("local",JSON.stringify(local))
+                    }
+                    localStorage.setItem("local", JSON.stringify(local))
                 }
-                
-                else{
+
+                else {
                     transfer[16] = 1
                     local.push(transfer)
                     console.log(local[4])
-                    localStorage.setItem("local",JSON.stringify(local))
+                    localStorage.setItem("local", JSON.stringify(local))
                 }
-             }
+            }
 
-               
-            } 
 
-        
+
+        }
+
+        //点击购买时
         if (e.target.name === "shop") {
             var global = getCookie("global")
             if (global) {
                 location.href = "./3.html"
+                var local = JSON.parse(localStorage.getItem("local")) || [];
+
+                var p = local.find(function (item) {
+                    return item[0] == transfer[0]
+                })
+
+
+                if (!p) {
+                    transfer[16] = 1
+                    local.push(transfer)
+                }
+                localStorage.setItem("local", JSON.stringify(local))
+
+
             } else {
                 location.href = "./login.html?target=" + encodeURIComponent(location.href)
             }

@@ -4,7 +4,14 @@
 }
 .margin{width: 1200px;margin:0 auto}
 .header{height:50px;display: flex}
-.header p{margin:0 20px;font: 12px/50px "";color:red ;}
+.header p{margin:0 20px;font: 12px/50px "";color:red}
+
+nav{height:46px;}
+nav .logo{float: left;height: 46px;width: 185px;}
+nav .logo img{height: 100%;width: 100%;display: block;}
+nav .ul{float: left;}
+nav .ul li{float: left;list-style: none;text-align: center;width: 46px;}
+nav .ul li a{font: 12px/46px "";width: 20px;border-right:1px solid #002;}
 .banner {
     width: 1200px;
     height: 535px;
@@ -27,7 +34,7 @@ ul.carousel {
     clear: both;
 }
 
-li {
+.clearFix li {
     float: left;
     width: 1200px;
     height: 535px;
@@ -36,28 +43,28 @@ li {
  
 }
 
-li:nth-child(1),
-li:nth-child(6) {
+.clearFix li:nth-child(1),
+.clearFix li:nth-child(6) {
     background:url(../img/t1.jpg) no-repeat;
     background-size: cover
 }
 
-li:nth-child(2) {
+.clearFix li:nth-child(2) {
     background:url(../img/t2.jpg) no-repeat;
     background-size: cover
 }
 
-li:nth-child(3) {
+ .clearFix li:nth-child(3) {
     background:url(../img/t3.jpg) no-repeat;
     background-size: cover
 }
 
-li:nth-child(4) {
+.clearFix li:nth-child(4) {
     background:url(../img/t4.jpg) no-repeat;
     background-size: cover
 }
 
-li:nth-child(5) {
+.clearFix li:nth-child(5) {
     background:url(../img/t5.jpg) no-repeat;
     background-size: cover
 }

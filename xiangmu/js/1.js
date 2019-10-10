@@ -69,7 +69,7 @@ var login = document.querySelector(".header #login")
 var enroll = document.querySelector(".header #enroll")
 if (global) {
     login.innerHTML = "登出";
-    enroll.innerHTML = ""
+    enroll.innerHTML = "注册"
     login.onclick = function () {
         var exp = new Date();
         exp.setTime(exp.getTime() + -1 * 1000);
