@@ -84,11 +84,9 @@ list.onclick = function (e) {
             console.log(local.length)
             console.log(list)
             //购物车为空
-            if(local.length == 1){
+            if(local.length === 1){
                 list.innerHTML = `
-                <h1>你的购物车空空如也,<a href = "./2.html">请去选购商品</a></h1>
-    
-                        `
+                <h1>你的购物车空空如也,<a href = "./2.html">请去选购商品</a></h1>       `
             }
 
 
